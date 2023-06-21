@@ -3,13 +3,9 @@ using namespace std;
 
 class Demo
 {
-    int num1, num2;
-
 public:
-    void swapData()
+    void swapData(int num1, int num2)
     {
-        cout << "Enter two numbers ";
-        cin >> num1 >> num2;
         int t = num1;
         num1 = num2;
         num2 = t;
@@ -20,6 +16,9 @@ public:
 int main()
 {
     Demo d;
-    d.swapData();
+    int num1, num2;
+    cout << "Enter two numbers ";
+    cin >> num1 >> num2;
+    d.swapData(num1, num2);
     return 0;
 }
