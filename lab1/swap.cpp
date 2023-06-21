@@ -3,9 +3,13 @@ using namespace std;
 
 class Demo
 {
+    int num1, num2;
+
 public:
-    void swapData(int num1, int num2)
+    void swapData(int n1, int n2)
     {
+        num1 = n1;
+        num2 = n2;
         int t = num1;
         num1 = num2;
         num2 = t;
