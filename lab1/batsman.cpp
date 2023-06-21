@@ -12,14 +12,20 @@ public:
     }
     void display()
     {
-        cout << "Runs = " << runs << " fours = " << fours << " sixes = " << sixes;
+        cout << "Runs = " << runs << " fours = " << fours << " sixes = " << sixes << endl;
     }
 };
 
 int main()
 {
-    Batsman b;
-    b.setData();
-    b.display();
+    Batsman b[5];
+    for (int i = 0; i < 5; i++)
+    {
+        b[i].setData();
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        b[i].display();
+    }
     return 0;
 }
