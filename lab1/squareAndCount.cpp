@@ -25,9 +25,11 @@ int Demo::count = 0;
 int main()
 {
     Demo d;
+    Demo d2;
+    
     d.getData();
     d.getData();
-    d.getData();
-    d.getData();
+    d2.getData();
+    d2.getData();
     Demo::showCount();
 }

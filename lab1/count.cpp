@@ -25,9 +25,21 @@ int Demo::count = 0;
 int main()
 {
     Demo d1;
-    d1.getData();
-    d1.getData();
-    d1.getData();
+    // cout << "Enter how many" << endl;
+
+    while (1)
+    {
+        char ch;
+        d1.getData();
+        cout << "Stop?";
+        cin >> ch;
+        if (ch == 'y')
+        {
+            break;
+        }
+    }
+    // d1.getData();
+    // d1.getData();
     d1.getCount();
     return 0;
 }
