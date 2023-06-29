@@ -1,5 +1,21 @@
 #include <iostream>
 using namespace std;
+
+void parseHMS(int &h, int &m, int &s)
+{
+    if (s % 60 > 0)
+    {
+        m += 1;
+        s = s % 60;
+    }
+    if (m % 60 > 0)
+    {
+        h += 1;
+        m = m % 60;
+    }
+    h = (h >= 24 ? h % 24 : h);
+}
+
 class Time
 {
     int hh;
@@ -15,6 +31,7 @@ public:
     }
     Time(int h, int m, int s)
     {
+        parseHMS(h, m, s);
         hh = h;
         mm = m;
         ss = s;
@@ -24,29 +41,25 @@ public:
         int H = t1.hh + t2.hh;
         int M = t1.mm + t2.mm;
         int S = t1.ss + t2.ss;
-        if (S % 60 != 0)
-        {
-            M += 1;
-            S = S % 60;
-        }
-        if (M % 60 != 0)
-        {
-            H += 1;
-            M = M % 60;
-        }
+        parseHMS(H, M, S);
         hh = H;
         mm = M;
         ss = S;
     }
     void display()
     {
-        cout << hh << ":" << mm << ":" << ss << endl;
+        int arr[3] = {hh, mm, ss};
+        for (int i = 0; i < 3; i++)
+        {
+            cout << (arr[i] < 10 ? "0" : "") << arr[i] << ((i < 2) ? ":" : "\n");
+        }
     }
 };
+
 int main()
 {
-    Time t1(1, 40, 20);
-    Time t2(2, 21, 45);
+    Time t1(8, 40, 20);
+    Time t2(15, 21, 45);
     Time t3;
     t3.add(t1, t2);
     t3.display();

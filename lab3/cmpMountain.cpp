@@ -8,7 +8,7 @@ class Mountain
     int height;
 
 public:
-    Mountain(char N[30], char L[30], int h)
+    Mountain(char N[], char L[], int h)
     {
         strcpy(name, N);
         strcpy(location, L);
@@ -18,8 +18,9 @@ public:
     {
         cout << "Name = " << name << " location = " << location << " height = " << height;
     }
-    void cmp(Mountain &M)
+    void cmpHeight(Mountain &M)
     {
+        cout << "Taller mountain :" << endl;
         if (M.height > height)
         {
             M.disp();
@@ -34,8 +35,7 @@ int main()
 {
     Mountain E("Everest", "Nepal", 8848);
     Mountain k2("K2", "Pakistan", 8000);
-    cout << "Taller mountain :" << endl;
-    k2.cmp(E);
+    k2.cmpHeight(E);
 
     return 0;
 }

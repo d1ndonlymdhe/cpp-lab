@@ -26,7 +26,7 @@ public:
 int main()
 {
     Demo d1(1, 2);
-    Demo d2 = d1;
+    Demo d2(d1);
     d2.sum();
     return 0;
 }

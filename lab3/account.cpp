@@ -1,23 +1,29 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
- class Account{
- 	int balance;
- 	public:
- 		Account(){
- 			balance = 50;
-		 }
-		 Account(int amt){
-		 	balance = 50+amt;
-		 }
-		 void display(){
-		 	cout << "balance = " << balance << endl;
-		 }
- };
- 
- int main(){
- 	Account A;
- 	Account A2(100);
- 	A.display();
- 	A2.display();
- 	return 0;
- }
+class AddAmount
+{
+	int amount;
+
+public:
+	AddAmount()
+	{
+		amount = 50;
+	}
+	AddAmount(int amt)
+	{
+		amount = 50 + amt;
+	}
+	void display()
+	{
+		cout << "amount = " << amount << endl;
+	}
+};
+
+int main()
+{
+	AddAmount A;
+	AddAmount A2(100);
+	A.display();
+	A2.display();
+	return 0;
+}
