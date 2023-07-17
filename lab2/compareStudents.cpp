@@ -39,11 +39,13 @@ int main()
 {
     GCES gces;
     PEC pec;
-    int a, b;
+    int a;
     cout << "How many students in PEC ";
     cin >> a;
+    pec.getStudents(a);
     cout << "How many students in GCES ";
-    cin >> b;
+    cin >> a;
+    gces.getStudents(a);
     if (compare(pec, gces) == 'g')
     {
         cout << "GCES";
