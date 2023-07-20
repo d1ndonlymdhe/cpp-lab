@@ -19,7 +19,7 @@ class Rect
     float a, b;
 
 public:
-    Rect operator=(Polar &P)
+    void operator=(Polar &P)
     {
         a = cos(P.th) * P.r;
         b = sin(P.th) * P.r;
