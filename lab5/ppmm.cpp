@@ -1,10 +1,5 @@
 #include <iostream>
 using namespace std;
-
-// class Abdd
-// {
-// };
-
 class Distance
 {
     int km;
@@ -23,21 +18,19 @@ public:
     {
         cout << "Distance = " << km << endl;
     }
-    friend void operator--(Distance &D);
+    friend void operator--(Distance D);
 };
 
-void operator--(Distance &D)
+void operator--(Distance D)
 {
     D.km--;
 }
 
 int main()
 {
-    // Abdd A;
-    // ++A;
-    Distance D(10);
-    ++D;
-    D.getDistance();
-    --D;
-    D.getDistance();
+    Distance abcd(10);
+    ++abcd;
+    abcd.getDistance();
+    --abcd;
+    abcd.getDistance();
 }
