@@ -3,34 +3,28 @@ using namespace std;
 
 void parseHMS(int &h, int &m, int &s)
 {
-    if (s % 60 > 0)
-    {
-        m += (s/60);
-        s = s % 60;
-    }
-    if (m % 60 > 0)
-    {
-        h += (m/60);
-        m = m % 60;
-    }
-    h = (h >= 24 ? h % 24 : h);
+	m += s / 60;	// round
+	h += m / 60;	// overflown values
+	s = s % 60;
+	m = m % 60;
+	h = h % 24;
 }
 
 class Time
 {
-    int hh;
-    int mm;
-    int ss;
+	int hh;
+	int mm;
+	int ss;
 
 public:
-    Time()
-    {
-        hh = 0;
-        mm = 0;
-        ss = 0;
-    }
-    Time(int h, int m, int s)
-    {
+	Time()
+	{
+		hh = 0;
+		mm = 0;
+		ss = 0;
+	}
+	Time(int h, int m, int s)
+	{
         parseHMS(h, m, s);
         hh = h;
         mm = m;
@@ -46,14 +40,12 @@ public:
         mm = M;
         ss = S;
     }
-    void display()
-    {
-        int arr[3] = {hh, mm, ss};
-        for (int i = 0; i < 3; i++)
-        {
-            cout << (arr[i] < 10 ? "0" : "") << arr[i] << ((i < 2) ? ":" : "\n");
-        }
-    }
+	void display()
+	{
+		if (hh < 10) cout << '0'; cout << hh << ':';
+		if (mm < 10) cout << '0'; cout << mm << ':';
+		if (ss < 10) cout << '0'; cout << ss << endl;
+	}
 };
 
 int main()
@@ -65,3 +57,4 @@ int main()
     t3.display();
     return 0;
 }
+
