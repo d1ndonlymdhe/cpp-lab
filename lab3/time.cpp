@@ -5,12 +5,12 @@ void parseHMS(int &h, int &m, int &s)
 {
     if (s % 60 > 0)
     {
-        m += 1;
+        m += (s/60);
         s = s % 60;
     }
     if (m % 60 > 0)
     {
-        h += 1;
+        h += (m/60);
         m = m % 60;
     }
     h = (h >= 24 ? h % 24 : h);
@@ -58,7 +58,7 @@ public:
 
 int main()
 {
-    Time t1(8, 40, 20);
+    Time t1(8, 40, 121);
     Time t2(15, 21, 45);
     Time t3;
     t3.add(t1, t2);
