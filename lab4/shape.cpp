@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 class Shape
 {
@@ -41,7 +42,11 @@ public:
     }
     float getArea()
     {
-        return sides[0] * sides[1] * sides[2];
+        int a = sides[0];
+        int b = sides[1];
+        int c = sides[2];
+        float s = (a + b + c) / 2;
+        return sqrt(s * (s - a) * (s - b) * (s - c));
     }
 };
 
