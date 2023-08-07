@@ -25,8 +25,7 @@ public:
     }
     void display()
     {
-        cout << "Roll = "
-             << "Sub 1 = " << sub1 << "Sub 2 = " << sub2 << endl;
+        cout << "Roll = " << roll << "Sub 1 = " << sub1 << "Sub 2 = " << sub2 << endl;
     }
 };
 int main()
