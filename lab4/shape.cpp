@@ -54,7 +54,7 @@ int main()
 {
     int rArr[2] = {1, 2};
     Rectangle r(rArr);
-    int tArr[3] = {1, 2, 3};
+    int tArr[3] = {4, 3, 5};
     Triangle t(tArr);
     cout << "rectangle  = " << r.getArea() << endl;
     cout << "triangle  = " << t.getArea() << endl;
