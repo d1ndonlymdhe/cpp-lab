@@ -36,12 +36,13 @@ public:
         strcpy(this->name, name);
         strcpy(this->location, location);
         employees = (Employee *)(calloc(employeeNum, sizeof(Employee)));
-        // fe
-        for (int i = 0; i < employeeNum; i++)
-        {
-            Employee E = employees[i];
-            this->employees[i] = (employees[i]);
-        }
+        this->employees = employees;
+        // for (int i = 0; i < employeeNum; i++)
+        // {
+        //     Employee *E = (&employees)[i];
+        //     // this->employees[i] = E;
+        //     // this->employees[i] = (employees[i]);
+        // }
 
         // memcpy(this->employees, employees, employeeNum * sizeof(Employee));
         this->employeeNum = employeeNum;
@@ -83,11 +84,11 @@ int main()
         emps[i] = Employee(id, salary, name);
         // cout << tempPts->eid << " " << tempPts->name << " " << tempPts->salary << endl;
     }
-    for (int i = 0; i < empNum; i++)
-    {
-        Employee E = emps[i];
-        cout << "Name = " << E.name << " eid = " << E.eid << " salary = " << E.salary << endl;
-    }
+    // for (int i = 0; i < empNum; i++)
+    // {
+    //     Employee E = emps[i];
+    //     cout << "Name = " << E.name << " eid = " << E.eid << " salary = " << E.salary << endl;
+    // }
     Company C(name, location, empNum, emps);
     C.disp();
     // Employee* emps;

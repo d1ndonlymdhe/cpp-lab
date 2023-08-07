@@ -9,20 +9,20 @@ protected:
 public:
     void setA()
     {
-        cout << "Enter value for a" << endl;
+        cout << "Enter value for class1 A" << endl;
         cin >> a;
     }
 };
 class Class2
 {
 protected:
-    int b;
+    int a;
 
 public:
     void setB()
     {
-        cout << "Enter value for b" << endl;
-        cin >> b;
+        cout << "Enter value for class2 A" << endl;
+        cin >> a;
     }
 };
 
@@ -31,7 +31,7 @@ class Class3 : public Class2, public Class1
 public:
     void sum()
     {
-        cout << "Sum = " << a + b;
+        cout << "Sum = " << Class2::a + Class1::a;
     }
 };
 
