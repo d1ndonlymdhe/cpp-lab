@@ -9,7 +9,7 @@ protected:
   char name[30];
 
 public:
-  Student(int roll_no, char *name)
+  Student(int roll_no, char name[])
   {
     this->roll_no = roll_no;
     strcpy(this->name, name);
@@ -50,7 +50,7 @@ protected:
   float percentage;
 
 public:
-  Result(int roll_no, char *name, int oop, int bc, int acc, int fin) : Marks(oop, bc, acc, fin), Student(roll_no, name)
+  Result(int roll_no, char name[], int oop, int bc, int acc, int fin) : Marks(oop, bc, acc, fin), Student(roll_no, name)
   {
     total = oop + bc + acc + fin;
     percentage = total / 4;
@@ -65,8 +65,11 @@ public:
 
 int main()
 {
-  char name[] = "Ayush";
-  Result R(10, name, 50, 50, 50, 50);
+  char name[20];
+  int roll, oop, bc, acc, fin;
+  cout << "Enter name roll oop bc acc fin " << endl;
+  cin >> name >> roll >> oop >> bc >> acc >> fin;
+  Result R(roll, name, oop, bc, acc, fin);
   R.disp();
   return 0;
 }
