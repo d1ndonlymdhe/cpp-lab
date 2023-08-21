@@ -4,10 +4,7 @@ using namespace std;
 class Vehicle
 {
 public:
-    virtual int getFare(int distance)
-    {
-        return distance * 50;
-    }
+    virtual int getFare(int distance) = 0;
 };
 
 class Car : public Vehicle
@@ -30,13 +27,11 @@ public:
 
 int main()
 {
-    Vehicle *Vptr = new Vehicle;
-    // Vehicle V;
-    cout << "Default fare for 20 km = " << Vptr->getFare(20) << endl;
+    Vehicle *Vptr;
     Vptr = new Car;
     // virtual function override
     cout << "Car fare for 20 km = " << Vptr->getFare(20) << endl;
-    Bus b;
-    cout << "Bus fare for 20km = " << b.getFare(20);
+    Vptr = new Bus;
+    cout << "Bus fare for 20km = " << Vptr->getFare(20) << endl;
     return 0;
 }

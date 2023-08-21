@@ -17,12 +17,6 @@ public:
         this->eid = eid;
         this->salary = salary;
     }
-    Employee(Employee &E)
-    {
-        this->eid = E.eid;
-        this->salary = E.salary;
-        strcpy(this->name, E.name);
-    }
     void disp()
     {
         cout << "Name = " << name << " Eid = " << eid << " Salary  = " << salary << endl;
@@ -39,7 +33,7 @@ public:
     {
         strcpy(this->name, name);
         strcpy(this->location, location);
-        this->E = Employee(E);
+        this->E = E;
     }
     void disp()
     {
