@@ -15,7 +15,6 @@ public:
     strcpy(this->name, name);
   }
 
-protected:
   void disp()
   {
     cout << "Name = " << name << " Roll no = " << roll_no << endl;
@@ -35,8 +34,6 @@ public:
     this->acc = acc;
     this->fin = fin;
   }
-
-protected:
   void disp()
   {
     cout << "oop = " << oop << " bc = " << bc << " acc = " << acc << " fin = " << fin << endl;
