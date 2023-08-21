@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
-template <typename T>
-void Swap(T &a, T &b)
+template <class A>
+void Swap(A &a, A &b)
 {
-    T t = a;
+    A t = a;
     a = b;
     b = t;
 }
