@@ -1,13 +1,12 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-class Rect;
 class Polar
 {
-    float r, th;
+    double r, th;
 
 public:
-    Polar(float radius, float angle)
+    Polar(double radius, double angle)
     {
         r = radius;
         th = angle;
@@ -16,13 +15,13 @@ public:
 };
 class Rect
 {
-    float a, b;
+    double a, b;
 
 public:
     void operator=(Polar &P)
     {
-        a = cos(P.th) * P.r;
-        b = sin(P.th) * P.r;
+        a = sin(P.th) * P.r;
+        b = cos(P.th) * P.r;
     }
     void disp()
     {
@@ -32,9 +31,10 @@ public:
 
 int main()
 {
-    Polar P(1, 3.14 / 2);
+    Polar P(1, M_PI);
     Rect R;
     R = P;
     R.disp();
+
     return 0;
 }
