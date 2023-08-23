@@ -1,3 +1,7 @@
+
+
+// do not copy copy employeeSingle.cpp
+
 #include <iostream>
 #include <string.h>
 using namespace std;
