@@ -10,20 +10,22 @@ public:
         km = k;
     }
 
-    void operator++(int Dummy)
+    Distance operator++(int Dummy)
     {
         km++;
+        return *this;
     }
     void getDistance()
     {
         cout << "Distance = " << km << endl;
     }
-    friend void operator--(Distance D, int Dummy);
+    friend Distance operator--(Distance &D, int Dummy);
 };
 
-void operator--(Distance D, int Dummy)
+Distance operator--(Distance &D, int Dummy)
 {
     D.km--;
+    return D;
 }
 
 int main()
