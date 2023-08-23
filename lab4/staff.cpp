@@ -10,14 +10,14 @@ protected:
 public:
     Staff(char n[], char addr[], char pst[])
     {
-        strcpy(this->name, n);
-        strcpy(this->address, addr);
-        strcpy(this->post, pst);
+        strcpy(name, n);
+        strcpy(address, addr);
+        strcpy(post, pst);
     }
     Staff(char n[], char addr[])
     {
-        strcpy(this->name, n);
-        strcpy(this->address, addr);
+        strcpy(name, n);
+        strcpy(address, addr);
     }
     void disp()
     {
