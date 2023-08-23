@@ -26,9 +26,9 @@ public:
 class Company
 {
     char name[30], location[30];
-    Employee E;
 
 public:
+    Employee E;
     Company(char name[], char location[], Employee &E)
     {
         strcpy(this->name, name);
@@ -38,7 +38,6 @@ public:
     void disp()
     {
         cout << "Company name = " << name << " Company location = " << location << endl;
-        E.disp();
     }
 };
 
@@ -54,5 +53,6 @@ int main()
     Employee E(Ename, eid, salary);
     Company C(name, location, E);
     C.disp();
+    C.E.disp();
     return 0;
 }
