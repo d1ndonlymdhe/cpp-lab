@@ -29,6 +29,7 @@ public:
     theory_marks_1 = th_marks_1;
     theory_marks_2 = th_marks_2;
   }
+
   void disp()
   {
     cout << "Theory 1 " << theory_marks_1 << " Theory 2 " << theory_marks_1 << endl;

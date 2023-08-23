@@ -21,6 +21,9 @@ class Metric
     int Centimeters;
 
 public:
+    Metric()
+    {
+    }
     Metric(Imperial &I)
     {
         float f = I.Feet + (I.Inches / float(12));
@@ -28,6 +31,7 @@ public:
         Meter = (int)(M);
         Centimeters = (int)(M * 100) % 100;
     }
+
     void disp()
     {
         cout << Meter << " meters and " << Centimeters << " centimeters" << endl;
@@ -37,7 +41,10 @@ public:
 int main()
 {
     Imperial I(6, 3);
-    Metric m(I);
+    Metric m;
+    m = I;
+
+    // int x = 1;
     m.disp();
     return 0;
 }
