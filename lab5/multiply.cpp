@@ -4,10 +4,9 @@ using namespace std;
 
 class String
 {
-    char *str = (char *)(calloc(1, sizeof(char)));
-    int len;
-
 public:
+    char *str = (char *)calloc(sizeof(char), 1);
+    int len;
     String()
     {
     }
@@ -19,21 +18,20 @@ public:
     }
     String operator*(int n)
     {
-        char *tempStr = (char *)calloc(len, n);
+        len = len * n;
+        char *tempStr = (char *)calloc(sizeof(char), len + 1);
         // cout << sizeof(str);
-        this->len = sizeof(str) * n;
         for (int i = 0; i < n; i++)
         {
             strcat(tempStr, str);
         }
-        // this->str = (char *)calloc(sizeof(str), n);
+        str = (char *)calloc(sizeof(char), len + 1);
         strcpy(this->str, tempStr);
-
         return *this;
     }
     void disp()
     {
-        cout << str;
+        cout << str << endl;
     }
 };
 
