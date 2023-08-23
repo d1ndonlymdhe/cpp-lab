@@ -10,7 +10,7 @@ public:
         km = k;
     }
 
-    void operator++()
+    void operator++(int Dummy)
     {
         km++;
     }
@@ -18,10 +18,10 @@ public:
     {
         cout << "Distance = " << km << endl;
     }
-    friend void operator--(Distance D);
+    friend void operator--(Distance D, int Dummy);
 };
 
-void operator--(Distance D)
+void operator--(Distance D, int Dummy)
 {
     D.km--;
 }
@@ -29,8 +29,8 @@ void operator--(Distance D)
 int main()
 {
     Distance abcd(10);
-    ++abcd;
+    abcd++;
     abcd.getDistance();
-    --abcd;
+    abcd--;
     abcd.getDistance();
 }
