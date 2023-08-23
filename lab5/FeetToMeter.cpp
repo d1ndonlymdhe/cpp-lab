@@ -21,9 +21,6 @@ class Metric
     int Centimeters;
 
 public:
-    Metric()
-    {
-    }
     Metric(Imperial &I)
     {
         float f = I.Feet + (I.Inches / float(12));
@@ -41,8 +38,7 @@ public:
 int main()
 {
     Imperial I(6, 3);
-    Metric m;
-    m = I;
+    Metric m = I;
 
     // int x = 1;
     m.disp();
